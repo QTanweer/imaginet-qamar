@@ -1,0 +1,129 @@
+.
+├── ImagiNet Checkpoints
+│   ├── imaginet_corvi_model.pth
+│   ├── imaginet_selfcon_model.pt
+│   └── imaginet_selfcon_origin.pt
+├── README.md
+├── annotations
+│   ├── calibration.txt
+│   ├── lasted_anchor.txt
+│   ├── test_all.txt
+│   ├── test_annotations.txt
+│   ├── test_annotations_dalle3.txt
+│   ├── test_annotations_gan.txt
+│   ├── test_annotations_midjourney.txt
+│   ├── test_annotations_sd.txt
+│   ├── test_calibration.txt
+│   ├── test_dalle3.txt
+│   ├── test_gan.txt
+│   ├── test_midjourney.txt
+│   ├── test_sd.txt
+│   └── train_annotations.txt
+├── data
+│   ├── blobs
+│   │   ├── 05715e8b824b53f6a49dfa32c83ff908b082f934fa121b26ff2582bbbcede3c1
+│   │   ├── 199ba29b3603d2e314b2c3c919b16a7033d1695e0f006abc9e13fab8e14132e3
+│   │   ├── 1c76811afc711e967a334f2a35deeabf565f996ca5e8d3f34b38bdb0419be47a
+│   │   ├── 35acf620f08fb8e8b213dfc46a5508c0f7acd5e278e8598275bc3bee9f8c59bf
+│   │   ├── 373360b0a8582628c89a9fe6af619e3043a42b0c71e871ead25a5f9d471cd81a
+│   │   ├── 44f48236b47956d29bf4c38751184a5b5c3dc91c3a4634db3e7984b8120edd4f
+│   │   ├── 4e9e32dca3110aa30329008985c99072051885a9e727884016b4d710b7d005a4
+│   │   ├── 52460257146630aaeafaf60114d1a9c3ed5f6d46e47a665ece3e23057c159f34
+│   │   ├── 53adcc07fc7d58038769277cc158309c9978c8e1
+│   │   ├── 5f592e2e49932d5e949c70761aa723e55d005ebbf6be2c63980e68fc608ab31a
+│   │   ├── 63c0d26ff66ad0b21437d6d41e1368752164240dee4d964a2063e609139f6dc9
+│   │   ├── 8e3088cbf44fc226c03022850ba62eec4c9d6d55
+│   │   ├── 9736678d81773e884d841ca73b3290f57bd6a697aeb4ae1286bf43d8a8c05ffa
+│   │   ├── ad119a1f765014e4fb22f5cdae2bf6d5f846d20133b9d76095e391db0315ad70
+│   │   ├── afc43477158482df0578e2ae5142f865d498c8c50778671c72d22a323143b8ce
+│   │   ├── b72ea2d68330ab5fded91d0016ef1020facb367e2cf414a14e08d029acfee7fe
+│   │   ├── bc4a4c313ec23a97811a4ff978aff9b21d6c581b988faf7c6cad4b419131ee28
+│   │   ├── c0e40f51fed3e9b731bc463b85220aa43ae96a1679644388cfd5bdefeef8587e
+│   │   └── db4c631a25f5d705d13dd880364fba331eae295566fe908aef0b37e33cfef357
+│   ├── refs
+│   │   └── main
+│   └── snapshots
+│       └── 9790e70e24e003ce3bea83379c70dc63e49dc755
+├── dataset_operations
+│   ├── delete_not_needed.py
+│   └── save_testset.py
+├── download_scripts
+│   ├── ffhq.py
+│   └── ffhq_filenames.txt
+├── media
+│   ├── dataset_preview.png
+│   └── logo.webp
+├── required_libs
+│   ├── DMimageDetection
+│   │   ├── LICENSE.md
+│   │   ├── README.md
+│   │   ├── docs
+│   │   ├── environment.yml
+│   │   ├── test_code
+│   │   └── training_code
+│   ├── GANimageDetection
+│   │   ├── LICENSE.md
+│   │   ├── README.md
+│   │   ├── docs
+│   │   ├── example_images
+│   │   ├── main.py
+│   │   └── resnet50nodown.py
+│   ├── LASTED
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── annotation
+│   │   ├── data
+│   │   ├── imgs
+│   │   ├── main.py
+│   │   ├── main.sh
+│   │   ├── model.py
+│   │   ├── preprocess.py
+│   │   └── weights
+│   ├── LASTED_pretrained.pt
+│   ├── grag2021_stylegan2.pth
+│   ├── imaginet_weights.pt
+│   ├── model_epoch_best.pth
+│   └── weights
+│       ├── Grag2021_latent
+│       └── Grag2021_progan
+├── requirements.txt
+├── testing_utils
+│   ├── autoencoder_reduce_dim.py
+│   ├── eval_model_detection.py
+│   ├── eval_model_detection_jpeg.py
+│   ├── eval_model_detection_resize.py
+│   └── testing
+│       ├── Corvi
+│       ├── ImagiNet
+│       ├── ImagiNet_Content
+│       ├── ImagiNet_Specific_Model
+│       ├── PracticalTestset
+│       ├── additional_annotations
+│       ├── get_method_here.patch
+│       └── setup_testing.py
+├── training_utils
+│   ├── datasets.py
+│   ├── losses
+│   │   ├── __init__.py
+│   │   └── losses.py
+│   ├── main_represent.py
+│   ├── networks
+│   │   ├── autoencoder.py
+│   │   ├── efficient_big.py
+│   │   ├── memory_bank.py
+│   │   ├── resnet_big.py
+│   │   ├── sub_network
+│   │   ├── vgg_big.py
+│   │   └── wrn_big.py
+│   ├── train.sh
+│   ├── train_linear_classifier_selfcon.py
+│   └── utils
+│       ├── __init__.py
+│       ├── dim_red_rae.py
+│       ├── imagenet.py
+│       ├── imagenet100.txt
+│       ├── tinyimagenet.py
+│       └── util.py
+└── tree.txt
+
+39 directories, 87 files

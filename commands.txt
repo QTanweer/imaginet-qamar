@@ -1,0 +1,21 @@
+# 1. List & filter all images (if you haven’t already)
+gsutil ls gs://sora-trainer-dataset/sora/images/** \
+  | grep -E '\.(jpe?g|png|webp)$' > all_images.txt
+
+# 2. Exclude the 10k you already grabbed, then sample 2k
+grep -Fxv -f sample10k.txt all_images.txt \
+  | shuf -n 2000 > sample2k.txt
+
+# 3. Download those 2k
+cat sample2k.txt | gsutil -m cp -I /local/download/path/
+   
+
+
+   ======================
+
+
+   python inference_imaginet.py \
+       --root . \
+       --ann  annotations/my_sora_test.txt \
+       --ckpt ImagiNet\ Checkpoints/imaginet_selfcon_origin.pt \
+       --bs   64

@@ -4,7 +4,7 @@ from torchvision import transforms
 from torcheval.metrics import BinaryAccuracy, BinaryAUROC
 from torchmetrics import AveragePrecision
 from torch.utils.tensorboard import SummaryWriter
-from networks.resnet_big import ConResNet
+from .networks.resnet_big import ConResNet
 from .datasets import ImagiNet
 import torch.nn as nn
 from tqdm import tqdm
@@ -17,9 +17,13 @@ torch.manual_seed(100)
 torch.cuda.manual_seed(100)
 
 model = ConResNet(name="resnet50nodown", selfcon_pos=[False, True, False], selfcon_arch="resnet", selfcon_size="fc", dataset="imaginet")
-state = torch.load("./checkpoint_of_the_selfcon_model.pth", map_location="cpu")
+print(f"prsent working directory: {os.getcwd()}")
+# state = torch.load("./ImagiNet Checkpoints/imaginet_selfcon_origin.pt", map_location="cpu")
+state = torch.load("./linear_imaginet_save_origin_calib/model_10.pt", map_location="cpu")
 model.load_state_dict(state["model"])
 model.eval()
+model.to("cuda")
+
 model.to("cuda")
 
 for module in model.modules():
@@ -35,14 +39,15 @@ train_transform = transforms.Compose([
         transforms.ToTensor(),
         normalize,
     ])
-train_dataset = ImagiNet("./", annotations_file="../annotations/calibration.txt", train=False, anchor=True, resize=True, transform=train_transform)
+# train_dataset = ImagiNet("./", annotations_file="../annotations/calibration.txt", train=False, anchor=True, resize=True, transform=train_transform)
+train_dataset = ImagiNet("./", annotations_file="./annotations/calib_set.txt", train=False, anchor=True, resize=True, transform=train_transform)
 train_loader = torch.utils.data.DataLoader(
-        train_dataset, batch_size=200, shuffle=True,
-        num_workers=16, pin_memory=True)
-test_dataset = ImagiNet("./", annotations_file="../annotations/test_annotations.txt", train=False, transform=train_transform)
+        train_dataset, batch_size=64, shuffle=True,
+        num_workers=4, pin_memory=False)
+test_dataset = ImagiNet("./", annotations_file="./annotations/testgen_images.txt", train=False, transform=train_transform)
 test_loader = torch.utils.data.DataLoader(
-        test_dataset, batch_size=200,
-        num_workers=16, pin_memory=True)
+        test_dataset, batch_size=64,
+        num_workers=4, pin_memory=False)
 criterion = torch.nn.BCEWithLogitsLoss()
 optimizer = torch.optim.Adam(classifier.parameters(), lr=1e-4, weight_decay=1e-3)
 def train_epoch(loader, model, cls, optimizer, criterion, epoch):
@@ -115,7 +120,7 @@ if not os.path.exists(dir_tb):
 if not os.path.exists(dir_save):
     os.mkdir(dir_save)
 summwrt = SummaryWriter(dir_tb, flush_secs=30)
-for i in range(1, 5+1):
+for i in range(1, 25+1):
     loss, acc, auc = train_epoch(train_loader, model, classifier, optimizer, criterion, i)
     summwrt.add_scalar("Train Loss", loss, i)
     summwrt.add_scalar("Train Acc", acc, i)

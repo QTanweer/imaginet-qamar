@@ -1,0 +1,69 @@
+File: results_origin_finetuning_17_sora.csv, 
+Accuracy: 0.74, 
+Mean Prob Correct: 0.94, 
+Median Prob Correct: 1.00
+File: results_origin_finetuning_12_sora.csv, 
+Accuracy: 0.75, 
+Mean Prob Correct: 0.94, 
+Median Prob Correct: 1.00
+File: results_origin_finetuning_11_sora.csv, 
+Accuracy: 0.84, 
+Mean Prob Correct: 0.96, 
+Median Prob Correct: 1.00
+File: results_origin_finetuning_16_sora.csv, 
+Accuracy: 0.73, 
+Mean Prob Correct: 0.94, 
+Median Prob Correct: 1.00
+File: results_origin_finetuning_13_sora.csv, 
+Accuracy: 0.71, 
+Mean Prob Correct: 0.94, 
+Median Prob Correct: 1.00
+File: results_origin_finetuning_18_sora.csv, 
+Accuracy: 0.79, 
+Mean Prob Correct: 0.94, 
+Median Prob Correct: 1.00
+File: results_origin_finetuning_23_sora.csv, 
+Accuracy: 0.77, 
+Mean Prob Correct: 0.94, 
+Median Prob Correct: 1.00
+File: results_origin_finetuning_22_sora.csv, 
+Accuracy: 0.78, 
+Mean Prob Correct: 0.95, 
+Median Prob Correct: 1.00
+File: results_origin_finetuning_19_sora.csv, 
+Accuracy: 0.79, 
+Mean Prob Correct: 0.95, 
+Median Prob Correct: 1.00
+File: results_origin_finetuning_25_sora.csv, 
+Accuracy: 0.66, 
+Mean Prob Correct: 0.93, 
+Median Prob Correct: 0.99
+File: results_origin_finetuning_20_sora.csv, 
+Accuracy: 0.81, 
+Mean Prob Correct: 0.95, 
+Median Prob Correct: 1.00
+File: results_origin_finetuning_15_sora.csv, 
+Accuracy: 0.70, 
+Mean Prob Correct: 0.93, 
+Median Prob Correct: 0.99
+File: results_origin_finetuning_21_sora.csv, 
+Accuracy: 0.69, 
+Mean Prob Correct: 0.94, 
+Median Prob Correct: 1.00
+File: results_origin_finetuning_24_sora.csv, 
+Accuracy: 0.80, 
+Mean Prob Correct: 0.95, 
+Median Prob Correct: 1.00
+File: results_origin_finetuning_14_sora.csv, 
+Accuracy: 0.78, 
+Mean Prob Correct: 0.94, 
+Median Prob Correct: 1.00
+File: results_origin_finetuning_10_sora.csv, 
+Accuracy: 0.73, 
+Mean Prob Correct: 0.94, 
+Median Prob Correct: 1.00
+                                    file  accuracy  mean_prob_correct  \
+0  results_origin_finetuning_10_sora.csv     0.731           0.941485   
+
+   median_prob_correct  
+0              0.99605
